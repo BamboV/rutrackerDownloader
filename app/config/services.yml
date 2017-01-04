@@ -1,0 +1,12 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+    transmission_download_torrent_listener:
+        class: Core\Transmission\TransmissionDownloadTorrentFileListener
+        arguments: ["%transmission_host%", "%transmission_endpoint%", "%transmission_username%", "%transmission_password%"]
+    rutracker:
+        class: Core\Rutracker\Services\RutrackerService
+        arguments: ["@transmission_download_torrent_listener", "%rutracker_login%", "%rutracker_password%"]

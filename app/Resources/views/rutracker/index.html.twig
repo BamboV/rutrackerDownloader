@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Rutracker
+{% endblock %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <form id="rutracker_search">
+                <input name="phrase">
+                <select name="type_id"></select>
+                <input type="submit" value="search">
+            </form>
+            <div id="search_result"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/rutracker.js') }}"></script>
+{% endblock %}
+
+
