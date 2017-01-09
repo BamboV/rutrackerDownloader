@@ -19,17 +19,13 @@ class RutrackerController extends Controller
 {
 
     /**
-     * @Route("api/v1/rutracker/series")
-     *
-     * @param Request $request
-     *
-     * @return Response
+     * @Route("/rutracker", name="homepage")
      */
-    public function seriesAction(Request $request){
-//        ;
-        var_dump($this->get('kernel')->getRootDir());die;
-        var_dump(fopen('storage/1.txt', 'w'));die;
-        return $this->json([]);
+    public function indexAction(Request $request)
+    {
+        return $this->render('rutracker/index.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+        ]);
     }
 
     /**
