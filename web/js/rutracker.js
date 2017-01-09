@@ -6,6 +6,7 @@ $(window).ready(function() {
         method: 'GET',
         url: '/api/v1/rutracker/forums'
     }).done(function(data){
+        $('[name=type_id]').append('<option value="">all</option>');
         for(var i in data) {
             $('[name=type_id]').append('<option value="'+data[i].id+'">'+data[i].title+'</option>');
         }
