@@ -13,7 +13,7 @@ security:
 
     access_control:
         # require ROLE_ADMIN for /admin*
-        - { path: *, roles: ROLE_ADMIN }
+        - { path: ^/*, roles: ROLE_ADMIN }
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
