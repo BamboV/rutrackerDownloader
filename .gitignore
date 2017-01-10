@@ -19,3 +19,4 @@ storage/*
 storage/cookies/*
 !storage/cookies/.gitkeep
 .idea
+*.yml-e
